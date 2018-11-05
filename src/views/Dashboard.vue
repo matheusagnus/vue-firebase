@@ -1,6 +1,6 @@
 <template>
     <div class="dashboard">
-        <h1>Pesquisa de users do Github</h1>
+        <h1 class="container">Pesquisa de users do Github</h1>
     </div>
 </template>
 
