@@ -5,32 +5,39 @@
                 <h2 class="center">Cadastro</h2>
                     <div class="field row">
                         <div class="input-field col s6">
-                            <input v-model="nome" placeholder="Nome" type="text" name="nome" class="validate">
+                            <input v-model="nome" placeholder="Nome" type="text"
+                             name="nome" class="validate">
                         </div>
                         <div class="input-field col s6">
-                            <input v-model="sobrenome" placeholder="Sobrenome" type="text" name="sobrenome" class="validate">
+                            <input v-model="sobrenome" placeholder="Sobrenome" 
+                            type="text" name="sobrenome" class="validate">
                         </div>
                     </div>
 
                     <div class="field row">
                         <div class="input-field col s12">
-                            <input v-model="email" placeholder="Email" type="email" name="email" class="validate">
+                            <input v-model="email" placeholder="Email" 
+                            type="email" name="email" class="validate">
                         </div>
                     </div>
 
                     <div class="field row">
                         <div class="input-field col s6">
-                            <input v-model="password" placeholder="Senha"  type="password" name="password" class="validate">
+                            <input v-model="password" placeholder="Senha"  
+                            type="password" name="password" class="validate">
                         </div>
                         <div class="input-field col s6">
-                            <input v-model="confirmpassword" placeholder="Confirmar Senha" type="password" name="confirm-password" class="validate">
+                            <input v-model="confirmpassword" 
+                            placeholder="Confirmar Senha" type="password" 
+                            name="confirm-password" class="validate">
                         </div>
                     </div>
                     
                     <p class="red-text center">{{ feedback }}</p>
 
                     <div class="field row center">
-                        <button @click="validation" class="waves-effect waves-light btn-small">Enviar</button>
+                        <button @click="validation" class="waves-effect 
+                        waves-light btn-small">Enviar</button>
                     </div>
             </form>
         </div>
@@ -55,15 +62,26 @@ export default {
     },
     
     methods: {
+        /**
+         * 
+         * 
+         * 
+         * 
+         * @var String faz algo
+         * return ahh
+         * 
+         */
         cadastro(){
             
-            if(this.email && this.password && this.nome && this.sobrenome && this.password) {
+            if(this.email && this.password && this.nome && this.sobrenome && 
+            this.password) {
                 do  {
                     this.feedback = 'Senhas diferentes'
                 } while (this.password != this.confirmpassword) {
                 let ref = db.collection('users')
                     
-                firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+                firebase.auth().createUserWithEmailAndPassword(this.email, 
+                this.password)
                 .then(() => {
                     ref.doc(this.email).set({
                         email: this.email,

@@ -7,14 +7,16 @@
 
                     <div class="field row">
                         <div class="input-field col s12">
-                            <input v-model="email" placeholder="Email" id="email" type="email" class="validate">
+                            <input v-model="email" placeholder="Email" 
+                            id="email" type="email" class="validate">
                             
                         </div>
                     </div>
 
                     <div class="field row">
                         <div class="input-field col s12">
-                            <input v-model="password" placeholder="Senha" id="password" type="password" class="validate">
+                            <input v-model="password" placeholder="Senha" 
+                            id="password" type="password" class="validate">
                             
                         </div>
                     </div>
@@ -22,7 +24,9 @@
                     <p class="red-text center">{{ feedback }}</p>
 
                     <div class="row center">
-                        <button class="waves-effect waves-light btn-small">Enviar</button>
+                        <button class="waves-effect waves-light btn-small">
+                            Enviar
+                        </button>
                     </div>
 
                 </div>
@@ -46,7 +50,8 @@ export default {
     methods: { 
         login(){
             if(this.email && this.password) {
-                firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+                firebase.auth().signInWithEmailAndPassword(this.email, 
+                this.password)
                 .then(cred => {
                     this.$router.push({name: 'dashboard'})
                 }).catch(err =>{
