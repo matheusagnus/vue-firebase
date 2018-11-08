@@ -5,13 +5,15 @@
 </template>
 
 <script>
-    export default {
-        name: 'Dashboard',
-        data() {
-            return {
+import firebase from 'firebase'
 
-            }
+export default {
+    name: 'Dashboard',
+    data() {
+        return {
+
         }
+    }
     }
 </script>
 
