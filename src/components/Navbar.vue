@@ -37,16 +37,23 @@ import router from 'vue-router'
                     this.$router.push({name: 'login'})
                 })
             }
-        },
-        created() {
-            firebase.auth().onAuthStateChanged((user) => {
-                if(user){
-                    this.user = user
-                } else {
-                    this.user = null
-                }
-            })
-        }
+        // },
+        // created() {
+        //     firebase.auth().onAuthStateChanged((user) => {
+        //         if(user){
+        //             this.user = user
+        //         } else {
+        //             this.user = null
+        //         }
+        //     }),
+        //     firebase.auth().currentUser((user) => {
+        //         if(user) {
+        //             this.user = user
+        //         } else {
+        //             this.user = null
+        //         }
+        //     })
+        // }
     }
 </script>
 
